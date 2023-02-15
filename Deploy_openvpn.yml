@@ -4,4 +4,4 @@
   become: yes
   gather_facts: yes
   roles:
-    - role: pankajthakur888.openvpn_access_server/
+    - role: pankajthakur888.openvpn_access_server
