@@ -1,7 +1,7 @@
 ---
 # tasks file for openvpn_access_server
 - name: Update and upgrade packages
-  hosts: your_host
+  hosts: localhost
   become: yes
   apt:
     update_cache: yes
