@@ -1,0 +1,64 @@
+---
+# tasks file for openvpn_access_server
+- name: Update and upgrade packages
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install required packages
+  apt:
+    name:
+      - libc6
+      - libffi7
+      - libgcc-s1
+      - libgmp10
+      - liblz4-1
+      - liblzo2-2
+      - libmariadb3
+      - libpcap0.8
+      - libssl1.1
+      - libstdc++6
+      - zlib1g
+      - bridge-utils
+      - net-tools
+      - libsasl2-2
+      - iproute2
+      - sqlite3
+      - libsqlite3-0
+      - iptables
+      - python-pkg-resources
+      - python-netaddr
+      - wget
+    state: present
+
+- name: Download and install OpenVPN Access Server clients
+  shell: |
+    wget https://openvpn.net/downloads/openvpn-as-bundled-clients-latest.deb
+    dpkg -i openvpn-as-bundled-clients-latest.deb
+    rm -r openvpn-as-bundled-clients-latest.deb
+    wget https://openvpn.net/downloads/openvpn-as-latest-ubuntu20.amd_64.deb
+    dpkg -i openvpn-as-latest-ubuntu20.amd_64.deb
+    rm -r openvpn-as-latest-ubuntu20.amd_64.deb
+
+- name: Define OpenVPN service name
+  set_fact:
+    openvpn_service: "openvpnas"
+
+- name: Create openvpn user
+  user:
+    name: openvpn
+    password: "{{ lookup('password', '/dev/null length=10 chars=ascii_letters,digits') }}"
+    shell: /bin/bash
+
+- name: Get OpenVPN Access Server password
+  shell: cat /usr/local/openvpn_as/init.log | grep "To login please use the"  | awk '{print $9}'
+  register: openvpn_password
+
+- name: Print OpenVPN Access Server password
+  debug:
+    var: openvpn_password.stdout_lines
+
+- name: Restart OpenVPN Access Server service
+  service:
+    name: "{{ openvpn_service }}"
+    state: restarted
