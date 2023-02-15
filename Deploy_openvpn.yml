@@ -1,0 +1,7 @@
+---
+- name: Install and configure OpenVPN
+  hosts: localhost
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: openvpn_access_server
