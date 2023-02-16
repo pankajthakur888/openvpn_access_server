@@ -57,7 +57,7 @@ Commands
 
     ansible-galaxy install pankajthakur888.openvpn_access_server
     
-    cd /.ansible/roles/pankajthakur888.openvpn_access_server
+    cd /root/.ansible/roles/pankajthakur888.openvpn_access_server
     
     ansible-playbook Deploy_openvpn.yml
     
