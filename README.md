@@ -1,12 +1,18 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+The "pankajthakur888.openvpn_access_server" role is an Ansible role that installs the OpenVPN Access Server on Ubuntu. It updates and upgrades packages, installs required packages, downloads and installs the OpenVPN Access Server clients, creates an "openvpn" user with a random password, gets the OpenVPN Access Server password and restarts the OpenVPN Access Server service.
+
+You can use this role in your Ansible playbooks to install the OpenVPN Access Server on Ubuntu servers in a repeatable and automated way.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+In the case of the "pankajthakur888.openvpn_access_server" role, there are some requirements that need to be met before using it. The role assumes that the target `Ubuntu Server 20` has internet access and that the apt package manager is used to install packages.
+
+Additionally, the sudo command should be available on the target server, and the user executing the Ansible playbook should have sufficient permissions to run the commands in the role.
+
+It is also assumed that the target server meets the minimum requirements for running the OpenVPN Access Server. Please refer to the OpenVPN Access Server documentation for more information on system requirements.
 
 Role Variables
 --------------
@@ -18,6 +24,10 @@ Dependencies
 
 A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
+If the "pankajthakur888.openvpn_access_server" role has any dependencies on other roles or packages, it should be mentioned in the role's documentation.
+
+However, in this case, the role does not have any dependencies on other roles or packages.
+
 Example Playbook
 ----------------
 
@@ -26,6 +36,32 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: servers
       roles:
          - { role: username.rolename, x: 42 }
+         
+
+How To Run
+-----------
+
+To run the "pankajthakur888.openvpn_access_server" role, you will need to include it in your Ansible playbook. You can do this by creating a playbook YAML file that includes the following:
+
+File:- Deploy_openvpn.yml
+
+    - name: Install OpenVPN Access Server
+      hosts: your_target_server
+      become: yes
+      roles:
+        - role: pankajthakur888.openvpn_access_server
+
+Commands
+    
+    sudo su
+
+    ansible-galaxy install pankajthakur888.openvpn_access_server
+    
+    cd /.ansible/roles/pankajthakur888.openvpn_access_server
+    
+    ansible-playbook Deploy_openvpn.yml
+    
+    systemctl status openvpnas
          
          
          
