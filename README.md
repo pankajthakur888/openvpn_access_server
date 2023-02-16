@@ -35,10 +35,8 @@ If not showing password
 
 Logs:- 
 
-TASK [pankajthakur888.openvpn_access_server : Print OpenVPN Access Server password] ************************************************************
-ok: [localhost] => {
-    "openvpn_password.stdout_lines": []
-}
+
+![image](https://user-images.githubusercontent.com/45850188/219280613-b8e0b127-a7f4-41ea-89a0-3ce896526d1a.png)
 
 OR
 
@@ -46,17 +44,17 @@ If Failed TASK Update and upgrade packages
 
 Logs:- 
 
-TASK [pankajthakur888.openvpn_access_server : Update and upgrade packages] *********************************************************************
-[WARNING]: The value True (type bool) in a string field was converted to 'True' (type string). If this does not look like what you expect,
-quote the entire value to ensure it does not change.
-fatal: [localhost]: FAILED! => {"changed": false, "msg": "'/usr/bin/apt-get upgrade --with-new-pkgs ' failed: E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).\n", "rc": 100, "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nYou might want to run 'apt --fix-broken install' to correct these.\nThe following packages have unmet dependencies:\n openvpn-as : Depends: python3-migrate but it is not installed\n              Depends: python3-sqlalchemy but it is not installed\n              Depends: python3-mysqldb but it is not installed\n              Depends: python3-cffi but it is not installed\n              Depends: python3-arrow but it is not installed\n              Depends: python3-lxml but it is not installed\n              Depends: python3-ldap3 but it is not installed\n              Depends: python3-defusedxml but it is not installed\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "You might want to run 'apt --fix-broken install' to correct these.", "The following packages have unmet dependencies:", " openvpn-as : Depends: python3-migrate but it is not installed", "              Depends: python3-sqlalchemy but it is not installed", "              Depends: python3-mysqldb but it is not installed", "              Depends: python3-cffi but it is not installed", "              Depends: python3-arrow but it is not installed", "              Depends: python3-lxml but it is not installed", "              Depends: python3-ldap3 but it is not installed", "              Depends: python3-defusedxml but it is not installed"]}
 
-PLAY RECAP *************************************************************************************************************************************
-localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+![image](https://user-images.githubusercontent.com/45850188/219280146-326f932a-ea47-4990-a917-d8e962e1e87c.png)
+
 
 Solution
 
        sudo apt --fix-broken install
+       
+Check Service
+
+       sudo systemctl status openvpnas
 
 License
 -------
