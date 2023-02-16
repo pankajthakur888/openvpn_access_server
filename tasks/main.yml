@@ -68,6 +68,17 @@
   set_fact:
     openvpn_service: "openvpnas"
 
+- name: Check if any broken packages again
+  shell: dpkg --audit || true
+  register: dpkg_audit_result
+  changed_when: false
+
+- name: Fix broken packages using apt command again
+  become: yes
+  become_method: sudo
+  shell: apt --fix-broken install -y
+  when: dpkg_audit_result.stdout != ''
+  
 - name: Create openvpn user
   user:
     name: openvpn
@@ -81,17 +92,6 @@
 - name: Print OpenVPN Access Server password
   debug:
     var: openvpn_password.stdout_lines
-    
-- name: Check if any broken packages again
-  shell: dpkg --audit || true
-  register: dpkg_audit_result
-  changed_when: false
-
-- name: Fix broken packages using apt command again
-  become: yes
-  become_method: sudo
-  shell: apt --fix-broken install -y
-  when: dpkg_audit_result.stdout != ''
 
 - name: Restart OpenVPN Access Server service
   service:
