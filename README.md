@@ -72,8 +72,9 @@ If not showing password
 Logs:- 
 
 
-![image](https://user-images.githubusercontent.com/45850188/219280613-b8e0b127-a7f4-41ea-89a0-3ce896526d1a.png)
-![image](https://user-images.githubusercontent.com/45850188/219356139-136fb40b-677c-4d53-a588-10bf83d70c4c.png)
+![image](https://user-images.githubusercontent.com/45850188/219356478-b1d63d67-a530-4d3f-a5dc-1caf20b0dd0e.png)
+![image](https://user-images.githubusercontent.com/45850188/219357201-319d1a64-b505-4e99-b2ba-a7cea24a2b8c.png)
+
 
 OR
 
@@ -82,7 +83,7 @@ If Failed TASK Update and upgrade packages
 Logs:- 
 
 
-![image](https://user-images.githubusercontent.com/45850188/219280146-326f932a-ea47-4990-a917-d8e962e1e87c.png)
+![image](https://user-images.githubusercontent.com/45850188/219357009-02a8caf6-82fb-4fab-95cc-4ace03241aaa.png)
 
 
 Solution
