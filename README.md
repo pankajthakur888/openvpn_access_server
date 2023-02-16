@@ -72,8 +72,7 @@ If not showing password
 Logs:- 
 
 
-![image](https://user-images.githubusercontent.com/45850188/219356478-b1d63d67-a530-4d3f-a5dc-1caf20b0dd0e.png)
-![image](https://user-images.githubusercontent.com/45850188/219357201-319d1a64-b505-4e99-b2ba-a7cea24a2b8c.png)
+![image](https://user-images.githubusercontent.com/45850188/219357363-d434fd90-f62f-40b9-b647-36d51747746f.png)
 
 
 OR
