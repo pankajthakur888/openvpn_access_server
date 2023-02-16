@@ -85,12 +85,24 @@ Logs:-
 
 
 Solution
+--------
 
        sudo apt --fix-broken install
        
 Check Service
 
        sudo systemctl status openvpnas
+       
+       
+NOTE
+----
+
+To access the OpenVPN Access Server Admin Web UI, you can go to https://<server-ip-address>/admin in your web browser.
+
+Make sure to replace <server-ip-address> with the actual IP address of your OpenVPN server.
+
+You should be prompted to enter the admin credentials during the first login. By default, the username is "openvpn" and the password can be obtained from the playbook output, which should have printed the password for the openvpn user.
+
 
 License
 -------
