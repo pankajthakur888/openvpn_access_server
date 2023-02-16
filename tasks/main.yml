@@ -40,6 +40,13 @@
     dpkg -i openvpn-as-latest-ubuntu20.amd_64.deb
     rm -r openvpn-as-latest-ubuntu20.amd_64.deb
 
+- name: Fix package dependencies
+  apt:
+    name: "openvpn-as"
+    state: latest
+    update_cache: yes
+    force_apt_get: yes
+
 - name: Define OpenVPN service name
   set_fact:
     openvpn_service: "openvpnas"
