@@ -113,4 +113,6 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Pankaj Kumar is a DevOps Engineer who works as a freelancer. DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.
+
+As a freelancer, Pankaj Kumar likely offers DevOps consulting services to clients on a project-by-project basis. Freelancers are self-employed individuals who offer their skills and services to multiple clients without committing to a single employer.
